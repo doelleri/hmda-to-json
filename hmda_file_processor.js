@@ -26,7 +26,7 @@ function _parseLine(type, line) {
 var HMDAFileProcessor = function() {
     return {
         process: function(file, next) {
-            chomp(file, function(err, lines) {
+            chomp(file, {trim: false}, function(err, lines) {
                 var error = null;
                 for (var lineNumber=0; lineNumber < lines.length; lineNumber++) {
                     var record;
